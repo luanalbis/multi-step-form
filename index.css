@@ -1,0 +1,765 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    color: hsl(213, 96%, 18%);
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(229, 24%, 87%, 0.329);
+}
+
+#main-container {
+    height: 70%;
+    width: 80%;
+    max-width: 900px;
+    min-width: 600px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+#steps-container {
+    height: 100%;
+    width: 35%;
+    min-width: 180px;
+    background-image: url("assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-attachment: local;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+}
+
+.steps-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.span-step-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: .8rem;
+    color: white;
+}
+
+.txt-step-number {
+    color: hsl(230, 32%, 85%);
+    font-size: .8rem;
+}
+
+.txt-step-info {
+    margin-top: 2px;
+    font-weight: 500;
+    font-size: .85rem;
+    color: white;
+}
+
+.step-activated {
+    background-color: hsl(211, 45%, 81%);
+    border-color: hsl(211, 45%, 81%);
+    color: hsl(213, 96%, 18%);
+}
+
+#main-forms-container {
+    width: 65%;
+    height: 100%;
+    padding: 5% 6% 3% 6%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#all-steps-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 50px;
+}
+
+/* STEP 1*/
+
+#header-container-step1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#header-container-step1>h1 {
+    font-weight: 550;
+}
+
+#header-container-step1>p {
+    color: hsl(231, 11%, 63%);
+    font-size: .95rem;
+}
+
+#form-step1-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-label-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-label-input-container>div>label {
+    font-size: .9rem;
+}
+
+.form-label-input-container>div>span {
+    display: none;
+    font-weight: 400;
+    font-size: .8rem;
+    color: rgba(255, 0, 0, 0.733);
+}
+
+.form-label-input-container>input {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0 10px;
+    margin-top: 8px;
+    border: 1px solid hsl(229, 24%, 87%);
+    font-weight: 400;
+}
+
+.labelAndErrorMessage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-label-input-container>input::placeholder {
+    font-size: 1rem;
+    color: hsl(231, 11%, 63%);
+}
+
+.form-label-input-container>input:hover {
+    border-color: hsl(243, 100%, 62%);
+}
+
+.form-label-input-container>input:focus {
+    outline: none;
+    border-width: 2px;
+    border-color: hsl(243, 100%, 62%);
+}
+
+/* STEP 2*/
+
+#form-step2-container {
+    display: none;
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+}
+
+#form-step2-card-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.step2-card-container {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 31%;
+    min-width: 95px;
+    padding: 10px 10px;
+    gap: 20px;
+    border: 1px solid hsl(230, 21%, 89%);
+    border-radius: 8px;
+}
+
+.step2-card-container:hover {
+    cursor: pointer;
+    border-color: hsl(243, 100%, 62%);
+}
+
+.step2-card-container>img {
+    width: 35px;
+    margin-bottom: 30%;
+}
+
+.card-selected {
+    border-color: hsl(243, 100%, 62%);
+    background-color: hsla(230, 21%, 89%, 0.26);
+}
+
+.step2-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.step2-card-info>h5 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.step2-card-info>p {
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+}
+
+.span-bonus-year-plan {
+    display: none;
+}
+
+/* BTN SLIDE STEP 2*/
+
+#btns-month-year-container {
+    background-color: hsla(234, 100%, 98%, 0.884);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+}
+
+
+#btn-slide-month-year {
+    height: 20px;
+    width: 40px;
+    border-radius: 25px;
+    padding: 1px;
+    background-color: hsl(213, 96%, 18%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.1s ease;
+}
+
+#btn-slide-month-year:hover {
+    cursor: pointer;
+}
+
+#slide-circle {
+    width: 40%;
+    height: 100%;
+    background-color: aliceblue;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+#btn-slide-month-year.active #slide-circle {
+    transform: translateX(155%);
+}
+
+.txt-btn-inactive {
+    color: hsl(231, 11%, 63%);
+    font-size: .9rem;
+}
+
+.txt-btn-active {
+    color: hsl(213, 96%, 18%);
+    font-size: .9rem;
+}
+
+
+/*STEPS 3 FORM*/
+#form-step3-container {
+    display: none;
+    flex-direction: column;
+    gap: 50px;
+    height: auto;
+}
+
+#step3-extra-add-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.step3-label-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.301);
+    border-radius: 8px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.step3-label-container:hover {
+    border-color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+
+.step3-label-container:has(.step3-form-extra-checkbox:checked) {
+    border-color: hsl(243, 100%, 62%);
+    border-radius: 8px;
+    background-color: hsla(230, 21%, 89%, 0.26);
+}
+
+.step3-form-extra-checkbox {
+    width: 20px;
+    padding: 5px;
+    height: 20px;
+    accent-color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+
+.step3-info-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.extras-txt-infos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.extras-txt-infos-container>h4 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.extras-txt-infos-container>p {
+    font-size: .9rem;
+    color: hsl(0, 3%, 55%);
+}
+
+.txt-price-and-period {
+    font-size: .8rem;
+    color: hsl(243, 100%, 62%);
+}
+
+/*STEPS 4 CONTEINER*/
+
+#form-step4-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+}
+
+#prices-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(231, 28%, 95%, 0.616);
+    gap: 25px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#header-price-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-price-info-container>div>h3 {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#header-price-info-container>div>button {
+    color: hsla(240, 1%, 52%, 0.774);
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
+#header-price-info-container>div>button:hover {
+    color: hsl(213, 93%, 28%);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#header-price-info-container>p {
+    font-weight: bolder;
+}
+
+#extra-adds-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.txt-extra-adds-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.txt-extra-adds-container>p {
+    font-size: .9rem;
+    color: hsla(240, 1%, 52%, 0.774);
+}
+
+.txt-extra-adds-container>span {
+    font-size: .8rem;
+    color: hsl(213, 87%, 21%);
+}
+
+#total-price-container {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#total-price-container>p {
+    font-size: .9rem;
+    color: hsla(240, 1%, 52%, 0.774);
+}
+
+#total-price-container>h2 {
+    font-weight: 500;
+    color: hsl(258, 84%, 54%);
+}
+
+/*BTNS CONTEINER*/
+
+#btns-footer-container {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#btn-go-back {
+    font-weight: 400;
+    color: hsl(231, 11%, 63%);
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+#btn-go-back:hover {
+    cursor: pointer;
+    color: hsl(213, 96%, 18%);
+}
+
+#btn-next-step {
+    border: none;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+#btn-next-step:hover {
+    cursor: pointer;
+    background-color: hsl(213, 93%, 28%);
+}
+
+#btn-next-step:disabled {
+    cursor: not-allowed;
+    background-color: hsla(213, 93%, 28%, 0.253);
+}
+
+#btn-confirm-order {
+    display: none;
+    border: none;
+    background-color: hsl(258, 84%, 54%);
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+
+#btn-confirm-order:hover {
+    cursor: pointer;
+    background-color: hsla(258, 84%, 54%, 0.493);
+}
+
+#confirming-order-container {
+    width: 65%;
+    height: 100%;
+    padding: 10%;
+    gap: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+#confirming-order-container>img {
+    width: 100px;
+}
+
+#confirming-order-container>h2 {
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+#confirming-order-container>p {
+    text-align: center;
+    color: rgba(130, 133, 136, 0.692);
+    font-size: .9rem;
+    text-justify: distribute;
+    line-height: 1.8;
+}
+
+@media (max-width: 620px) {
+    #main-container {
+        height: 100%;
+        width: 100%;
+        min-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border-radius: 0;
+        position: relative;
+        background-color: transparent;
+    }
+
+    #steps-container {
+        height: 20%;
+        min-height: 150px;
+        min-width: 100%;
+        background-image: url("assets/images/bg-sidebar-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+        border-radius: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .steps-info {
+        gap: 0px;
+    }
+
+    .steps-info>div {
+        display: none;
+    }
+
+    .span-step-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    #main-forms-container {
+        display: flex;
+        width: 100%;
+        height: 80%;
+        min-height: 470px;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    #all-steps-container {
+        background-color: white;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 15px;
+        padding: 25px 25px;
+        border-radius: 10px;
+        position: fixed;
+        top: 0;
+        margin-top: 100px;
+    }
+
+    #header-container-step1>h1 {
+        font-size: 1.5rem;
+        font-weight: 550;
+    }
+
+    #header-container-step1>p {
+        color: hsl(231, 11%, 63%);
+        font-size: .95rem;
+        line-height: 1.5;
+    }
+
+    /* STEP 1*/
+
+    #form-step1-container {
+        gap: 20px;
+    }
+
+    /* STEP 2*/
+
+    #form-step2-container {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #form-step2-card-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .step2-card-container {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        width: 100%;
+        padding: 15px 15px;
+        border: 1px solid hsl(230, 21%, 89%);
+        border-radius: 8px;
+    }
+
+    .step2-card-container>img {
+        width: 40px;
+        margin-bottom: 0;
+    }
+
+    .card-selected {
+        border-color: hsl(243, 100%, 62%);
+        background-color: hsla(230, 21%, 89%, 0.26);
+    }
+
+    .step2-card-info {
+        gap: 5px;
+    }
+
+    /*STEPS 3 FORM*/
+
+    #form-step3-container {
+        gap: 20px;
+    }
+
+    #step3-extra-add-container {
+        gap: 10px;
+    }
+
+    .step3-label-container {
+        height: 70px;
+        padding: 5px 15px;
+        gap: 12px;
+    }
+
+    .extras-txt-infos-container>h4 {
+        font-size: .9rem;
+
+    }
+
+    .extras-txt-infos-container>p {
+        font-size: .8rem;
+    }
+
+    /*STEPS 4 CONTEINER*/
+
+    #header-price-info-container>div>h3 {
+        font-size: 1rem;
+    }
+
+    #total-price-container>h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    /*BTNS CONTEINER*/
+
+    #btns-footer-container {
+        height: auto;
+        padding: 5px 20px;
+        background-color: white;
+    }
+
+    #btn-next-step {
+        height: 45px;
+        border-radius: 5px;
+    }
+
+    #btn-confirm-order {
+        height: 45px;
+        border-radius: 5px;
+    }
+
+    #confirming-order-container {
+        width: 90%;
+        height: 60%;
+        min-height: 400px;
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        border-radius: 10px;
+        transform: translate(-50%, -0%);
+        background-color: aliceblue;
+    }
+
+    #confirming-order-container>img {
+        max-width: 30%;
+    }
+
+    #confirming-order-container>p {
+        font-size: 1rem;
+    }
+}

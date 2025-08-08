@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="index.css">
+    <title>Multi-step form</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main id="main-container">
+
+      <div id="steps-container">
+
+        <div class="steps-info">
+          <span class="span-step-circle step-activated" id="span-step1">1</span>
+          <div>
+            <p class="txt-step-number">STEP 1</p>
+            <h3 class="txt-step-info">YOUR INFO</h3>
+          </div>
+        </div>
+
+        <div class="steps-info">
+          <span class="span-step-circle" id="span-step2">2</span>
+          <div>
+            <p class="txt-step-number">STEP 2</p>
+            <h3 class="txt-step-info">SELECT PLAN</h3>
+          </div>
+        </div>
+
+        <div class="steps-info">
+          <span class="span-step-circle" id="span-step3">3</span>
+          <div>
+            <p class="txt-step-number">STEP 3</p>
+            <h3 class="txt-step-info">ADD-ONS</h3>
+          </div>
+        </div>
+
+        <div class="steps-info">
+          <span class="span-step-circle" id="span-step4">4</span>
+          <div>
+            <p class="txt-step-number">STEP 4</p>
+            <h3 class="txt-step-info">SUMMARY</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="main-forms-container">
+
+        <div id="all-steps-container">
+          <div id="header-container-step1">
+            <h1 id="txtHeaderForms">Personal info</h1>
+            <p id="txtSubHeaderForms">Please provider your name, email adress and phone number.</p>
+          </div>
+
+          <form id="form-step1-container" data-step="1">
+            <div id="form-input-name" class="form-label-input-container">
+              <div class="labelAndErrorMessage">
+                <label for="name">Name</label>
+                <span id="txtnameRequired">Enter a valid name</span>
+              </div>
+              <input id="name" type="text" placeholder="Ex. Stephen Hawking">
+            </div>
+            <div id="form-input-email" class="form-label-input-container">
+              <div class="labelAndErrorMessage">
+                <label for="email">Email</label>
+                <span id="txtemailRequired">Enter a valid email</span>
+              </div>
+              <input id="email" type="text" placeholder="Ex. youremail@email.com">
+            </div>
+            <div id="form-input-phone" class="form-label-input-container">
+              <div class="labelAndErrorMessage">
+                <label for="phone">Phone</label>
+                <span id="txtphoneRequired">Enter a valid phone</span>
+              </div>
+              <input id="phone" type="text" placeholder="Ex. +5585999481595">
+            </div>
+          </form>
+
+          <form id="form-step2-container" data-step="2">
+            <div id="form-step2-card-container">
+              <button id="btn-card-arcade" type="button" class="step2-card-container card-selected">
+                <img src="assets/images/icon-arcade.svg" alt="">
+                <div class="step2-card-info">
+                  <h5>Arcade</h5>
+                  <p id="txt-price-arcade">$9/mo</p>
+                  <span class="span-bonus-year-plan" style="font-size: 0.7rem;">2 months free</span>
+                </div>
+              </button>
+              <button id="btn-card-advanced" type="button" class="step2-card-container">
+                <img src="assets/images/icon-advanced.svg" alt="">
+                <div class="step2-card-info">
+                  <h5>Advanced</h5>
+                  <p id="txt-price-advanced">$12/mo</p>
+                  <span class="span-bonus-year-plan" style="font-size: 0.7rem;">2 months free</span>
+                </div>
+              </button>
+              <button id="btn-card-pro" type="button" class="step2-card-container">
+                <img src="assets/images/icon-pro.svg" alt="">
+                <div class="step2-card-info">
+                  <h5>Pro</h5>
+                  <p id="txt-price-pro">$15/mo</p>
+                  <span class="span-bonus-year-plan" style="font-size: 0.7rem;">2 months free</span>
+                </div>
+              </button>
+            </div>
+            <div id="btns-month-year-container">
+              <p class="txt-btn-active" id="txt-btn-monthly">Monthly
+              </p>
+              <button type="button" id="btn-slide-month-year"><span id="slide-circle"></span></button>
+              <p class="txt-btn-inactive" id="txt-btn-yearly">Yearly</p>
+            </div>
+          </form>
+
+          <form id="form-step3-container" data-step="3">
+            <div id="step3-extra-add-container">
+              <label class="step3-label-container" for="checkbox-services">
+                <input class="step3-form-extra-checkbox" type="checkbox" name="checkbox-services"
+                  id="checkbox-services">
+                <div class="step3-info-container">
+                  <div class="extras-txt-infos-container">
+                    <h4>Online service</h4>
+                    <p>Access to multiplayer games</p>
+                  </div>
+                  <div>
+                    <p id="txt-pick-add-price-services" class="txt-price-and-period">+$10/yo</p>
+                  </div>
+                </div>
+
+              </label>
+              <label class="step3-label-container" for="checkbox-storage">
+                <input class="step3-form-extra-checkbox" type="checkbox" name="checkbox-storage" id="checkbox-storage">
+                <div class="step3-info-container">
+                  <div class="extras-txt-infos-container">
+                    <h4>Larger storage</h4>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+                  <div>
+                    <p id="txt-pick-add-price-storage" class="txt-price-and-period">+$20/yo</p>
+                  </div>
+                </div>
+
+              </label>
+              <label class="step3-label-container" for="checkbox-profile">
+                <input class="step3-form-extra-checkbox" type="checkbox" name="checkbox-profile" id="checkbox-profile">
+                <div class="step3-info-container">
+                  <div class="extras-txt-infos-container">
+                    <h4>Customizable profile</h4>
+                    <p>Custom theme on your profile</p>
+                  </div>
+                  <div>
+                    <p id="txt-pick-add-price-profile" class="txt-price-and-period">+$20/yo</p>
+                  </div>
+                </div>
+
+              </label>
+            </div>
+          </form>
+
+          <form id="form-step4-container" data-step="4">
+            <div id="prices-info-container">
+              <div id="header-price-info-container">
+                <div>
+                  <h3 id="txtUserTypePlan">type</h3>
+                  <button onclick="changePeriodPlan()" type="button">Change</button>
+                </div>
+                <p id="txtUserPricePlan">$9/mo</p>
+              </div>
+              <span style="border-bottom:1px solid rgba(0, 0, 0, 0.096) ;"></span>
+              <div id="extra-adds-info-container">
+                <div id="containerUserServices" class="txt-extra-adds-container">
+                  <p id="txtUserServices">Online services</p>
+                  <span id="txtPriceUserServices">+$1/mo</span>
+                </div>
+                <div id="containerUserStorage" class="txt-extra-adds-container">
+                  <p id="txtUserStorage">Larger storage</p>
+                  <span id="txtPriceUserStorage">+$2/mo</span>
+                </div>
+                <div id="containerUserProfile" class="txt-extra-adds-container">
+                  <p id="txtUserProfile">Customizable profile</p>
+                  <span id="txtPriceUserProfile">+$2/mo</span>
+                </div>
+              </div>
+            </div>
+            <div id="total-price-container">
+              <p id="txtTotalPerPeriod">Total (Per Month)</p>
+              <h2 id="txtTotalAllPlan">+$12/mo</h2>
+            </div>
+          </form>
+
+        </div>
+        <div id="btns-footer-container">
+          <button onclick="goNextOrPreviousForm(-1)" id="btn-go-back">Go Back</button>
+          <button onclick="goNextOrPreviousForm(1)" id="btn-next-step" disabled>Next Step</button>
+          <button onclick="confirmOrder()" id="btn-confirm-order">Confirm</button>
+        </div>
+
+      </div>
+      <div id="confirming-order-container">
+        <img src="assets/images/icon-thank-you.svg" alt="">
+        <h2>Thank you!</h2>
+        <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support,
+          please feel free to email us at luanalbis12@gmail.com</p>
+      </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+
+</html>
