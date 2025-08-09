@@ -1,8 +1,9 @@
+const pricePlanType = { arcade: 9, advanced: 12, pro: 15 }
+const extraAdds = { services: 1, storage: 2, profile: 2 };
+
 const userExtraAdds = {};
 const userPlan = { type: 'arcade', period: 'monthly', price: 9 };
 
-const pricePlanType = { arcade: 9, advanced: 12, pro: 15 }
-const extraAdds = { services: 1, storage: 2, profile: 2 };
 
 const user = { name: undefined, email: undefined, phone: undefined, plan: userPlan, extraAdds: userExtraAdds };
 
@@ -13,6 +14,7 @@ const regexValidators = {
 };
 document.querySelectorAll('#form-step1-container input').forEach(input => {
     input.addEventListener('input', function () {
+
         const btnNextStep = document.getElementById('btn-next-step');
         const field = this.id;
         const value = this.value.trim();
@@ -61,7 +63,7 @@ document.getElementById("btn-slide-month-year").addEventListener("click", functi
     yearly.classList.toggle('txt-btn-active', isMonthlyActive);
     yearly.classList.toggle('txt-btn-inactive', !isMonthlyActive);
 
-    changeUserPlan(isMonthlyActive ? yearly.id : monthly.id);
+    changeUserTypePlan(isMonthlyActive ? yearly.id : monthly.id);
 });
 
 document.querySelectorAll('.step2-card-container').forEach(card => {
@@ -98,7 +100,7 @@ function updateUserExtraAdds() {
     }
 }
 
-function changeUserPlan(plan) {
+function changeUserTypePlan(plan) {
     let displaySpanYearBonus = 'none';
     let priceArcade = 9;
     let priceAdvanced = 12;
@@ -195,7 +197,7 @@ function updateFormFinishingUp() {
             document.getElementById(txtExtraPrice).innerHTML = `+$${keyPrice}${sufix}`
         }
     }
-    
+
     document.getElementById('txtTotalPerPeriod').innerHTML = `Total ${sufixTotal}`;
     document.getElementById('txtTotalAllPlan').innerHTML = `$${total}${sufix}`;
 }
